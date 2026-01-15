@@ -2,10 +2,16 @@
   "name": "pf_backend",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon server.js"
-  },
+  "dev": "nodemon server.js",
+  "start": "node server.js",
+
+  "prisma:validate": "prisma validate",
+  "prisma:migrate": "prisma migrate dev --name init",
+  "prisma:generate": "prisma generate",
+  "prisma:studio": "prisma studio"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/noumankhan20/pf-backend.git"
@@ -19,8 +25,12 @@
   "homepage": "https://github.com/noumankhan20/pf-backend#readme",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^7.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "prisma": "^7.2.0"
   }
 }
